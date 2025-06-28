@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './App.css';
+import SearchLoyalty from './components/SearchLoyalty';
+import ShowLoyalty from './components/ShowLoyalty';
+import Login from './components/Login';
+import Home from './components/Home';
+import ProtectedRoute from './components/ProtectedRoute';
+
+export default function App() {
+  // return <RouterProvider router={router} />;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path="/home" element={<Home />} />
+            <Route path="/search" element={<SearchLoyalty />} />
+            <Route path="/loyalty" element={<ShowLoyalty />} />
+            <Route path="/loyalty/:clientId" element={<ShowLoyalty />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+
+
+
     </div>
   );
 }
-
-export default App;

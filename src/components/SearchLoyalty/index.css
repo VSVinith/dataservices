@@ -1,0 +1,31 @@
+.search-loyalty-container{
+    display: flex;
+    justify-content: center;
+}
+
+.form-container{
+    width: 20vw;
+    /* border: 1px solid rgb(180, 179, 179); */
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.input{
+    padding: 8px;
+    font-size: 16px;
+    width: 95%;
+    border: 1px rgb(215, 215, 213) solid;
+    border-radius: 5px;
+}
+.button{
+    /* margin-left: 10px; */
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 16px;
+    border: 0px;
+    border-radius: 2px;
+    color: white;
+    background-color: rgb(4, 4, 65);
+}
