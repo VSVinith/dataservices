@@ -19,23 +19,24 @@ const ShowLoyalty = () => {
     const { clientId } = params
     // console.log(clientId)    
 
-    const getLoyaltyInfo = async () => {
-        const api = `https://retoolapi.dev/JaWLpz/data?clientId=${clientId}`
-        const response = await fetch(api)
-        // console.log("response:", response)
-        const data = await response.json()
-        // console.log("data:", data)
-        setLoyaltyInfo(data)
-        dispatch(getData(data))
 
-    }
 
     useEffect(() => {
+        const getLoyaltyInfo = async () => {
+            const api = `https://retoolapi.dev/JaWLpz/data?clientId=${clientId}`
+            const response = await fetch(api)
+            // console.log("response:", response)
+            const data = await response.json()
+            // console.log("data:", data)
+            setLoyaltyInfo(data)
+            dispatch(getData(data))
+
+        }
         getLoyaltyInfo()
-    }, [])
+    }, [clientId])
 
 
-    
+
 
     // const getLoyaltyInfo = async () => {
 
