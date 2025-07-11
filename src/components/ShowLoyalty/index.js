@@ -32,7 +32,7 @@ const ShowLoyalty = () => {
 
     useEffect(() => {
         getLoyaltyInfo()
-    }, [])
+    }, [clientId])
 
 
     
